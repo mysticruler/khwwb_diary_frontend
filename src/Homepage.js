@@ -13,7 +13,7 @@ function Homepage() {
   }, []);
 
   const handleSubmit = async (e) => {
-    // e.preventDefault();  // Ensure the form submission is prevented by default
+    e.preventDefault();  // Ensure the form submission is prevented by default
   
     console.log('Username:', username);  // Log the username value
     try {
