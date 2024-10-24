@@ -6,7 +6,7 @@ function Homepage() {
     
     
     
-    <h1>ninte achate andi, poda kooothiii</h1>
+    <h1>Hello goooooois</h1>
     
     
     
