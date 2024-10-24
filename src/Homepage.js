@@ -15,13 +15,14 @@ function Homepage() {
   const handleSubmit = async (e) => {
    
     try {
-      const response = await fetch('http://localhost:1111/user', {
+      const response = await fetch('https://muniversebackend.onrender.com/user', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ user: username }),  // Send the username in the body
-      });
+        body: JSON.stringify({ user: username }),
+    });
+    
 
       const result = await response.json();
       if (result === 'success') {
