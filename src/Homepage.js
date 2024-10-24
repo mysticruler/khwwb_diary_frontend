@@ -13,7 +13,9 @@ function Homepage() {
   }, []);
 
   const handleSubmit = async (e) => {
-   
+    e.preventDefault();  // Ensure the form submission is prevented by default
+  
+    console.log('Username:', username);  // Log the username value
     try {
       const response = await fetch('https://muniversebackend.onrender.com/user', {
         method: 'POST',
@@ -21,10 +23,11 @@ function Homepage() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ user: username }),
-    });
-    
-
+      });
+      
       const result = await response.json();
+      console.log('Result:', result);  // Log the response result
+  
       if (result === 'success') {
         setMessage('User submitted successfully!');
       } else {
@@ -35,6 +38,7 @@ function Homepage() {
       setMessage('Failed to submit the user.');
     }
   };
+  
 
   return (
     <div className="video-container">
