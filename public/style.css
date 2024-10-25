@@ -1,0 +1,16 @@
+/* public/styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+  }
+  
+  #root {
+    position: relative;
+    z-index: 1; /* Ensure content is above the video */
+    color: white; /* Make text readable */
+  }
+  
+  /* Additional styles can be added here */
+  
