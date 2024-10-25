@@ -1,44 +1,57 @@
 import React, { useRef, useEffect, useState } from 'react';
-import './Homepage.css';  // Import a separate CSS file for styling
+import './Homepage.css';
 
 function Homepage() {
   const videoRef = useRef(null);
-  const [username, setUsername] = useState(''); // State to handle username input
-  const [message, setMessage] = useState('');   // State to display the response message
+  const inputRef = useRef(null); // Ref for the input field
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 5;  // Adjust speed as needed
+      videoRef.current.playbackRate = 5;
     }
   }, []);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();  // Ensure the form submission is prevented by default
-  
-    console.log('Username:', username);  // Log the username value
-    try {
-      const response = await fetch('https://muniversebackend.onrender.com/user', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ user: username }),
-      });
-      
-      const result = await response.json();
-      console.log('Result:', result);  // Log the response result
-  
-      if (result === 'success') {
-        setMessage('User submitted successfully!');
-      } else {
-        setMessage('Error submitting user.');
+    e.preventDefault();
+
+    if (inputRef.current) {
+      const username = inputRef.current.value.trim(); // Trim whitespace
+      console.log('Form Submitted. Username:', username);
+
+      // Validate input value
+      if (!username) {
+        setMessage('Please enter a username.');
+        return;
       }
-    } catch (error) {
-      console.error('Error:', error);
-      setMessage('Failed to submit the user.');
+
+      try {
+        const response = await fetch('https://muniversebackend.onrender.com/user', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ user: username }),
+        });
+
+        const result = await response.json();
+        console.log('Server Response:', result);
+
+        if (result === 'success') {
+          setMessage('User submitted successfully!');
+          inputRef.current.value = ''; // Clear the input field directly
+          console.log('Input field cleared:', inputRef.current.value); // Log the cleared input value
+        } else {
+          setMessage('Error submitting user.');
+        }
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        setMessage('Failed to submit the user.');
+      }
+    } else {
+      console.error('Input ref is not available');
     }
   };
-  
 
   return (
     <div className="video-container">
@@ -47,11 +60,11 @@ function Homepage() {
         autoPlay
         loop
         muted
-        playsInline  // Important for mobile playback
+        playsInline
         className="background-video"
       >
         <source src="/videos/homebg.mp4" type="video/mp4" />
-        <source src="/videos/homebg.webm" type="video/webm" /> {/* Add fallback formats */}
+        <source src="/videos/homebg.webm" type="video/webm" />
         Your browser does not support the video tag.
       </video>
       <div className="content-overlay">
@@ -61,8 +74,7 @@ function Homepage() {
             Enter Username:
             <input
               type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}  // Handle input change
+              ref={inputRef} // Attach the ref here
               required
             />
           </label>
