@@ -8,6 +8,8 @@ function Homepage() {
     const handleSubmit = async (e) => {
         e.preventDefault(); // Prevent default form submission behavior
 
+        console.log('Form Submitted. Username:', username); // Log the submitted username
+
         // Validate input value
         if (!username.trim()) {
             setMessage('Please enter a username.');
@@ -24,9 +26,9 @@ function Homepage() {
             });
 
             const result = await response.json();
-            console.log('Server Response:', result);
+            console.log('Server Response:', result); // Log the server response
 
-            // Check server response
+            // Check server response and update message accordingly
             if (result === 'success') {
                 setMessage('User submitted successfully!'); // Success message
                 setUsername(''); // Clear the username state
@@ -34,7 +36,7 @@ function Homepage() {
                 setMessage('Error submitting user.'); // Error message on failure
             }
         } catch (error) {
-            console.error('Error submitting form:', error);
+            console.error('Error submitting form:', error); // Log any errors
             setMessage('Failed to submit the user.'); // Generic error message
         }
     };
@@ -48,7 +50,10 @@ function Homepage() {
                     <input
                         type="text"
                         value={username} // Controlled input bound to username state
-                        onChange={(e) => setUsername(e.target.value)} // Update state on input change
+                        onChange={(e) => {
+                            console.log('Username input changed:', e.target.value); // Log input change
+                            setUsername(e.target.value); // Update state on input change
+                        }} // Update state on input change
                         required // Ensure input is required
                     />
                 </label>
