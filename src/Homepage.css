@@ -36,3 +36,22 @@ p {
   font-weight: bold; /* Bold text */
 }
 
+
+
+
+.custom-image {
+  width: 200px;             /* Change this value to adjust the width */
+  height: auto;             /* Maintain aspect ratio */
+  position: absolute;       /* Position it absolutely within the parent */
+  opacity: 0.4;             /* Adjust opacity (0 to 1) */
+  top: 100px;               /* Move the image down (change as needed) */
+  left: 15%;                /* Center the image horizontally */
+  transform: translateX(-50%); /* Offset the image left by half its width */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity changes */
+  z-index: 2;               /* Ensure the image appears above other elements */
+}
+
+/* Optional: Add a hover effect to change opacity */
+.custom-image:hover {
+  opacity: 1;               /* Full opacity on hover */
+}
