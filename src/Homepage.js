@@ -7,16 +7,12 @@ function Homepage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault(); // Prevent default form submission behavior
-
-        console.log('Form Submitted. Username:', username); // Log the submitted username
-
-        // Validate input value
-        if (!username.trim()) {
-            setMessage('Please enter a username.');
-            return;
-        }
-
+    
+        // Clear the input field immediately
+        setUsername(''); // This will clear the input field
+    
         try {
+            // Log the submitted username
             const response = await fetch('https://muniversebackend.onrender.com/user', {
                 method: 'POST',
                 headers: {
@@ -24,22 +20,19 @@ function Homepage() {
                 },
                 body: JSON.stringify({ user: username }), // Send username in request body
             });
-
-            const result = await response.json();
-            console.log('Server Response:', result); // Log the server response
-
+    
             // Check server response and update message accordingly
-            if (result === 'success') {
-                setMessage('User submitted successfully!'); // Success message
-                setUsername(''); // Clear the username state
+            if (response.ok) {
+                setMessage('Username submitted successfully!');
             } else {
-                setMessage('Error submitting user.'); // Error message on failure
+                setMessage('Failed to submit username.');
             }
         } catch (error) {
             console.error('Error submitting form:', error); // Log any errors
             setMessage('Failed to submit the user.'); // Generic error message
         }
     };
+    
 
     return (
         <div className="content-overlay">
