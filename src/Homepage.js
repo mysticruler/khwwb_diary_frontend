@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import './Homepage.css';
 
 function Homepage() {
-    const [username, setUsername] = useState(''); 
+    const [username, setUsername] = useState(''); // State for the username
 
     const handleSubmit = async (e) => {
         e.preventDefault(); // Prevent default form submission behavior
 
         // Clear the input field immediately
-        setUsername(''); 
+        setUsername('');
 
         try {
             // Send username to the server
@@ -26,17 +26,17 @@ function Homepage() {
 
     return (
         <div className="content-overlay">
-            <h1>Hello goooooois</h1>
+            <h1>Bro Felt bored so he made a website <br></br>Hello goooooois</h1>
             <form onSubmit={handleSubmit} className="user-form">
                 <label>
-                    Enter Username:
+                  
                     <input
                         type="text"
-                        value={username} 
+                        value={username}
                         onChange={(e) => {
                             console.log('Username input changed:', e.target.value);
                             setUsername(e.target.value);
-                        }} 
+                        }}
                     />
                 </label>
                 <button type="submit">Submit</button>

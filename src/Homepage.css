@@ -1,7 +1,8 @@
 /* Styles for the video container and content overlay */
 .content-overlay {
+  margin-top: 350px;
   z-index: 1; /* Ensures content is above any background */
-  color: black; /* Text color */
+  color: rgb(243, 240, 240); /* Text color */
   text-align: center; /* Center align text */
 }
 
@@ -34,3 +35,4 @@ p {
   color: green; /* Message text color */
   font-weight: bold; /* Bold text */
 }
+
