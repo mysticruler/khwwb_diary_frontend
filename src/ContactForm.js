@@ -70,7 +70,7 @@ const ContactForm = () => {
           </button>
         </div>
         <span id="msg" ref={msgRef} style={{ opacity: 0, zIndex: -1 }}>
-          Sent!
+          Your thought has been seen to the Universe
         </span>
       </form>
       <span id="roket" ref={rocketRef}></span>

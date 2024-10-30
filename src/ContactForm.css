@@ -1,5 +1,5 @@
 :root {
-  --clr-primary: #007bff; /* Changed to a bluish color */
+  --clr-primary: #007bff; /* Primary bluish color */
   --clr-light-gray: #d3d3d3;
   --clr-green: #4caf50;
   --clr-white: #ffffff;
@@ -8,7 +8,7 @@
 .container {
   display: grid;
   place-items: center;
-  min-height: 100vh;
+  min-height: 100vh; /* Full viewport height */
 }
 
 .being-sent {
@@ -18,11 +18,11 @@
 }
 
 .inputbox {
-  display: flex; /* Use flex to align input and button */
-  align-items: center; /* Center align input and button vertically */
+  display: flex; /* Aligns input and button */
+  align-items: center; /* Center align vertically */
   margin-bottom: 20px;
-  width: 100%; /* Full width of the container */
-  max-width: 400px; /* Set a max width for the input box */
+  width: 100%; /* Full width of container */
+  max-width: 400px; /* Maximum width */
 }
 
 .placeholder {
@@ -32,97 +32,97 @@
   position: absolute;
   top: 50%;
   left: 0.5em;
-  transform: translateY(-50%);
+  transform: translateY(-50%); /* Center placeholder vertically */
   z-index: 2;
-  pointer-events: none;
+  pointer-events: none; /* Prevents interaction */
 }
 
 .input-text {
-  padding: 10px; /* Moderate padding */
-  font-size: 14px; /* Smaller font size */
+  padding: 10px;
+  font-size: 14px; 
   border: 1px solid var(--clr-light-gray);
-  border-radius: 5px; /* Slightly rounded corners */
-  transition: border 0.3s;
-  flex: 1; /* Allow the input to take available space */
+  border-radius: 5px;
+  transition: border 0.3s; /* Smooth border transition */
+  flex: 1; /* Takes available space */
   margin-right: 10px; /* Space between input and button */
 }
 
 .input-text:focus {
-  outline: none;
-  border-left: 2px solid var(--clr-primary);
+  outline: none; /* Removes default focus outline */
+  border-left: 2px solid var(--clr-primary); /* Left border change on focus */
 }
 
 .input-text:valid {
   outline: none;
-  border-left: 2px solid var(--clr-green);
+  border-left: 2px solid var(--clr-green); /* Left border change when valid */
 }
 
 #roket {
   z-index: 1;
   position: absolute;
-  width: 2px;
-  height: 0px;
+  width: 8px; /* Width of the rocket */
+  height: 0px; /* Initial height */
   background-image: linear-gradient(var(--clr-white) 60%, var(--clr-primary), transparent);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 0; /* Start from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center the rocket */
   transition: height 0.5s ease; /* Smooth height transition */
 }
 
 .launch {
-  animation: sending 2s forwards; /* Trigger the sending animation */
+  animation: sending 3s forwards; /* Speed of the rocket launch */
 }
 
 @keyframes sending {
   0% {
-    height: 0;
-    transform: translate(-50%, -50%);
+    height: 0; /* Start with no height */
+    transform: translate(-50%, 0); /* Start from the bottom */
   }
   50% {
-    height: 200px;
+    height: 200px; /* Rocket height at mid-animation */
   }
   100% {
-    height: 200px;
-    transform: translate(-50%, -110vh);
+    height: 200px; /* Final height */
+    transform: translate(-50%, -110vh); /* Move off the screen */
   }
 }
 
 #msg {
-  transition: opacity 0.5s;
-  z-index: -1;
+  transition: opacity 0.5s; /* Fade in/out for message */
+  z-index: -1; /* Initially hidden */
 }
 
 .form-container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center the form and message horizontally */
+  align-items: center; /* Center form and message */
 }
 
 .user-form {
   margin-top: 20px; /* Space above the form */
-  text-align: center; /* Center align the form elements */
+  text-align: center; /* Center align elements */
 }
 
 .btn {
-  padding: 10px 15px; /* Moderate padding for the button */
-  font-size: 14px; /* Slightly smaller font size */
-  background-color: var(--clr-primary); /* Match the primary color */
+  padding: 10px 15px; /* Button padding */
+  font-size: 14px; /* Font size for the button */
+  background-color: var(--clr-primary); /* Button color */
   color: var(--clr-white); /* White text color */
   border: none; /* Remove default border */
-  border-radius: 5px; /* Slightly rounded corners */
-  cursor: pointer; /* Change cursor on hover */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer on hover */
   transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
 }
 
 .btn:hover {
-  background-color: #0056b3; /* Darker shade for hover effect */
+  background-color: #0056b3; /* Darker shade on hover */
   transform: translateY(-1px); /* Slight lift effect */
 }
 
 #msg {
-  margin-top: 10px; /* Space between the button and the message */
-  color: var(--clr-green); /* Color for the "Sent!" message */
-  font-weight: bold; /* Bold text */
-  transition: opacity 0.5s;
+  margin-top: 10px; /* Space between button and message */
+  color: var(--clr-green); /* Message color */
+  font-weight: bold; /* Bold message */
+  transition: opacity 0.5s; /* Smooth opacity transition */
   z-index: -1; /* Initially hidden */
 }
