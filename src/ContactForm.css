@@ -1,0 +1,128 @@
+:root {
+  --clr-primary: #007bff; /* Changed to a bluish color */
+  --clr-light-gray: #d3d3d3;
+  --clr-green: #4caf50;
+  --clr-white: #ffffff;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.being-sent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputbox {
+  display: flex; /* Use flex to align input and button */
+  align-items: center; /* Center align input and button vertically */
+  margin-bottom: 20px;
+  width: 100%; /* Full width of the container */
+  max-width: 400px; /* Set a max width for the input box */
+}
+
+.placeholder {
+  text-transform: capitalize;
+  color: var(--clr-light-gray);
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 0.5em;
+  transform: translateY(-50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.input-text {
+  padding: 10px; /* Moderate padding */
+  font-size: 14px; /* Smaller font size */
+  border: 1px solid var(--clr-light-gray);
+  border-radius: 5px; /* Slightly rounded corners */
+  transition: border 0.3s;
+  flex: 1; /* Allow the input to take available space */
+  margin-right: 10px; /* Space between input and button */
+}
+
+.input-text:focus {
+  outline: none;
+  border-left: 2px solid var(--clr-primary);
+}
+
+.input-text:valid {
+  outline: none;
+  border-left: 2px solid var(--clr-green);
+}
+
+#roket {
+  z-index: 1;
+  position: absolute;
+  width: 2px;
+  height: 0px;
+  background-image: linear-gradient(var(--clr-white) 60%, var(--clr-primary), transparent);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: height 0.5s ease; /* Smooth height transition */
+}
+
+.launch {
+  animation: sending 2s forwards; /* Trigger the sending animation */
+}
+
+@keyframes sending {
+  0% {
+    height: 0;
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    height: 200px;
+  }
+  100% {
+    height: 200px;
+    transform: translate(-50%, -110vh);
+  }
+}
+
+#msg {
+  transition: opacity 0.5s;
+  z-index: -1;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the form and message horizontally */
+}
+
+.user-form {
+  margin-top: 20px; /* Space above the form */
+  text-align: center; /* Center align the form elements */
+}
+
+.btn {
+  padding: 10px 15px; /* Moderate padding for the button */
+  font-size: 14px; /* Slightly smaller font size */
+  background-color: var(--clr-primary); /* Match the primary color */
+  color: var(--clr-white); /* White text color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Slightly rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+  transform: translateY(-1px); /* Slight lift effect */
+}
+
+#msg {
+  margin-top: 10px; /* Space between the button and the message */
+  color: var(--clr-green); /* Color for the "Sent!" message */
+  font-weight: bold; /* Bold text */
+  transition: opacity 0.5s;
+  z-index: -1; /* Initially hidden */
+}
