@@ -40,18 +40,51 @@ p {
 
 
 .custom-image {
-  width: 200px;             /* Change this value to adjust the width */
-  height: auto;             /* Maintain aspect ratio */
-  position: absolute;       /* Position it absolutely within the parent */
-  opacity: 0.4;             /* Adjust opacity (0 to 1) */
-  top: 100px;               /* Move the image down (change as needed) */
-  left: 15%;                /* Center the image horizontally */
-  transform: translateX(-50%); /* Offset the image left by half its width */
+  width: 200px;                  /* Adjust width as needed */
+  height: auto;                  /* Maintain aspect ratio */
+  opacity: 0.4;                  /* Base opacity */
   transition: opacity 0.3s ease; /* Smooth transition for opacity changes */
-  z-index: 2;               /* Ensure the image appears above other elements */
+  z-index: 2;                    /* Ensure the image appears above other elements */
 }
 
-/* Optional: Add a hover effect to change opacity */
 .custom-image:hover {
-  opacity: 1;               /* Full opacity on hover */
+  opacity: 1;                    /* Full opacity on hover */
+}
+
+/* Positioning and centering for each individual image */
+.instaM {
+  position: absolute;
+  top: 0px;
+  left: 49.5%;
+  width: 280px;  
+  transform: translateX(-50%);   /* Center the image horizontally */
+}
+
+.linkedin {
+  position: absolute;
+  top: 150px;
+  left: 75%;
+  transform: translateX(-50%);   /* Center the image horizontally */
+}
+
+.spotify {
+  position: absolute;
+  top: 480px;
+  left: 70%;
+  transform: translateX(-50%); 
+  width: 280px;    /* Center the image horizontally */
+}
+
+.youtube {
+  position: absolute;
+  top: 480px;
+  left: 28%;
+  transform: translateX(-50%);   /* Center the image horizontally */
+}
+
+.insta {
+  position: absolute;
+  top: 120px;
+  left: 16%;
+  transform: translateX(-50%);   /* Center the image horizontally */
 }
