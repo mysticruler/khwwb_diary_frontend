@@ -65,6 +65,19 @@ function Homepage() {
         />
       </a>
 
+
+      <a
+        href="/Game"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src={`${process.env.PUBLIC_URL}/images/game.jpg`}
+          alt="Instagram"
+          className="custom-image game"
+        />
+      </a>
+
       <h1>Bro Felt bored so he made a website <br></br>Hello goooooois</h1>
       <ContactForm />
 

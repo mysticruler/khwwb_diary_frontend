@@ -88,3 +88,10 @@ p {
   left: 16%;
   transform: translateX(-50%);   /* Center the image horizontally */
 }
+
+.game {
+  position: absolute;
+  top: 620px;
+  left: 48%;
+  transform: translateX(-50%);   /* Center the image horizontally */
+}
