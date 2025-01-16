@@ -7,7 +7,7 @@ function Game() {
 
   const fieldWidth = 700; // Width of the rectangular field
   const fieldHeight = 500; // Height of the rectangular field
-  const ballSize = 50; // Diameter of the ball
+  const ballSize = 80; // Diameter of the ball
 
   useEffect(() => {
     const interval = setInterval(() => {
