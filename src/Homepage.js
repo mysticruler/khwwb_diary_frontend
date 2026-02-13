@@ -47,6 +47,7 @@ function Homepage() {
 
   const [showIntro, setShowIntro] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [showOverlay, setShowOverlay] = useState(false);
 
 

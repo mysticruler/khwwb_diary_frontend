@@ -6,6 +6,21 @@ const AnimatedNumber = ({ value, showPlus = true }) => {
   const started = useRef(false);
 
   useEffect(() => {
+    const startCount = () => {
+      const duration = 1500;
+      const startTime = performance.now();
+
+      const animate = (time) => {
+        const progress = Math.min((time - startTime) / duration, 1);
+        const current = Math.floor(progress * value);
+        setDisplay(current);
+
+        if (progress < 1) requestAnimationFrame(animate);
+      };
+
+      requestAnimationFrame(animate);
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !started.current) {
@@ -16,24 +31,10 @@ const AnimatedNumber = ({ value, showPlus = true }) => {
       { threshold: 0.6 }
     );
 
-    observer.observe(ref.current);
+    if (ref.current) observer.observe(ref.current);
+
     return () => observer.disconnect();
-  }, [startCount]);
-
-  const startCount = () => {
-    const duration = 1500;
-    const startTime = performance.now();
-
-    const animate = (time) => {
-      const progress = Math.min((time - startTime) / duration, 1);
-      const current = Math.floor(progress * value);
-      setDisplay(current);
-
-      if (progress < 1) requestAnimationFrame(animate);
-    };
-
-    requestAnimationFrame(animate);
-  };
+  }, [value]); // value is the ONLY real dependency
 
   return (
     <h3 ref={ref}>
