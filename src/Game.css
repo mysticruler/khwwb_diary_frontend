@@ -1,9 +1,0 @@
-body {
-    margin: 0;
-    overflow: hidden; /* Prevent scrolling while the game is active */
-  }
-  
-  div {
-    box-sizing: border-box;
-  }
-  
