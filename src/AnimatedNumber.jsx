@@ -18,7 +18,7 @@ const AnimatedNumber = ({ value, showPlus = true }) => {
 
     observer.observe(ref.current);
     return () => observer.disconnect();
-  }, []);
+  }, [startCount]);
 
   const startCount = () => {
     const duration = 1500;

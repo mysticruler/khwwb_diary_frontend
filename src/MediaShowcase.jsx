@@ -18,7 +18,7 @@ export default function MediaShowcase() {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   return (
     <div className="media-left glass">
