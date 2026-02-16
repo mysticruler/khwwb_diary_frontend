@@ -1,4 +1,6 @@
 import { useEffect, useState, useRef } from "react";
+import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaYoutube } from "react-icons/fa6";
+
 
 
 import "./Homepage.css";
@@ -859,11 +861,12 @@ function Homepage() {
               </p>
 
               <div className="footer-socials">
-                <span>Fb</span>
-                <span>Tw</span>
-                <span>In</span>
-                <span>Yt</span>
+                <a href="#"><FaFacebookF /></a>
+                <a href="#"><FaXTwitter /></a>
+                <a href="#"><FaLinkedinIn /></a>
+                <a href="#"><FaYoutube /></a>
               </div>
+
             </div>
 
             {/* Column 2 */}
