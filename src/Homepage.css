@@ -57,7 +57,7 @@ body::before {
   top: 0;
   width: calc(100% - 40px);
   margin: 20px;
-  padding: 14px 32px;
+  padding: 0px 32px;
 
   display: flex;
   justify-content: space-between;
