@@ -861,10 +861,10 @@ function Homepage() {
               </p>
 
               <div className="footer-socials">
-                <a href="#"><FaFacebookF /></a>
-                <a href="#"><FaXTwitter /></a>
-                <a href="#"><FaLinkedinIn /></a>
-                <a href="#"><FaYoutube /></a>
+                <a href="https://www.facebook.com" target="_blank" rel="noreferrer"><FaFacebookF /></a>
+                <a href="https://www.x.com" target="_blank" rel="noreferrer"><FaXTwitter /></a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noreferrer"><FaLinkedinIn /></a>
+                <a href="https://www.youtube.com" target="_blank" rel="noreferrer"><FaYoutube /></a>
               </div>
 
             </div>
