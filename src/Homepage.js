@@ -1,9 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaYoutube } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import GoverningBody from "./governingBody";
 
-import { Routes, Route } from "react-router-dom";
+
 
 import "./Homepage.css";
 import PVS from "./images/PVS.png";
