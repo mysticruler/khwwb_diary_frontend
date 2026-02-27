@@ -240,7 +240,7 @@ function Homepage() {
       )}
 
       <h6 className="emg">
-        TOLL FREE NUMBER : 0484-2401990| Language :
+        TOLL FREE NUMBER : 0484-2401990 | Language :
         <a href="/en" className="lang-link"> English </a> |
         <a href="/ml" className="lang-link"> മലയാളം </a>
       </h6>
