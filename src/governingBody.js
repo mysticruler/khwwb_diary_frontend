@@ -1,7 +1,7 @@
 
 import "./governingBody.css";
 import Navbar from "./Navbar";
-import mee from "./images/mee.jpg";   // 👈 your image path
+
 
 
 
