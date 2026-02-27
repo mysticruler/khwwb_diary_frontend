@@ -484,6 +484,18 @@ body::before {
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
 }
 
+/* ================= NAVBAR VISIBILITY STATES ================= */
+
+/* Default → faded */
+.nav-idle {
+  opacity: 0.2;
+  transform: translateY(-8px) scale(0.98);
+}
+
+.nav-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
 
 
 
@@ -2406,11 +2418,11 @@ body.intro-active {
 
 .footer-socials a:nth-child(2):hover {
   color: #000;
-  
+
 }
 
 .footer-socials a:nth-child(3):hover {
-  color: #0A66C2 ;
+  color: #0A66C2;
 }
 
 .footer-socials a:nth-child(4):hover {

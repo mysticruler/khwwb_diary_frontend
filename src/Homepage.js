@@ -291,7 +291,7 @@ function Homepage() {
 
               <span>Whats New?</span>
               <span>Archives</span>
-              <span>RTI Act</span>
+              <span>Coolie Pattika</span>
 
               {/* Workers submenu */}
               <div className="submenu-wrapper">
@@ -307,9 +307,11 @@ function Homepage() {
                 <span className="submenu-title">Board Staff ▸</span>
                 <div className="submenu glass">
                   <span>CPF Rules</span>
+                   <span>Staff Rules</span>
                   <span>Forms</span>
                   <span>Pay Revision</span>
                   <span>D.A</span>
+                  <span>seniority list</span>
                   <span>Others</span>
                 </div>
               </div>
@@ -326,6 +328,7 @@ function Homepage() {
           <li className="nav-item dropdown">
             RTI
             <div className="dropdown-menu glass">
+              <span>RTI Act</span>
               <span>Online RTI Application</span>
               <span>List Of Officials</span>
             </div>
