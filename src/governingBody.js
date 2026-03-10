@@ -53,12 +53,12 @@ function GoverningBody() {
 
   <p className="gb-description">
     The Governing Body of the Kerala Headload Workers Welfare Board is called the Board.
-    It is constituted by the Government of Kerala under the Kerala Headload Workers Act, 1978,
+    It is constituted by the Government of Kerala under the Kerala Headload Workers Act, 1978,under section 14
     and all members are appointed by the Government by notification in the Gazette.
     The Board consists of fifteen members including the Chairman, comprising five representatives
     of employers, five representatives of headload workers and five representatives of the Government.
     The Board administers and implements the functions and welfare schemes of the Welfare Board in
-    accordance with the provisions of the Act and the Rules.
+    accordance with the provisions of the Act and the Schemes.
   </p>
 
 </div>

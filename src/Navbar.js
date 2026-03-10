@@ -18,14 +18,14 @@ function Navbar() {
 
 
         <ul className="nav-links">
-          <li className="nav-item">Home</li>
+          <li className="nav-item"> <Link to="/">Home</Link></li>
 
           <li className="nav-item dropdown">
             About Us
             <div className="dropdown-menu glass">
               <span>Board</span>
               <span><Link to="/governing-body">Governing Body</Link></span>
-              <span>Who is Who?</span>
+              <span>administrative Hierarchy</span>
 
               {/* Schemes with submenu */}
               <div className="submenu-wrapper">

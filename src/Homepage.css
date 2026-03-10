@@ -38,45 +38,35 @@ body::before {
 
 /* ===================== GLASS BASE ===================== */
 .glass {
-  background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.25),
-      rgba(255, 255, 255, 0.08));
+  background: linear-gradient(
+      135deg,
+      rgba(255,255,255,0.25),
+      rgba(255,255,255,0.08)
+  );
   backdrop-filter: blur(22px) saturate(170%);
   -webkit-backdrop-filter: blur(22px) saturate(170%);
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255,255,255,0.35);
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.12),
-    inset 0 0 0.5px rgba(255, 255, 255, 0.6);
-  padding: 20px;
+    0 10px 30px rgba(0,0,0,0.12),
+    inset 0 0 0.5px rgba(255,255,255,0.6);
 }
 
 /* ===================== NAVBAR ===================== */
 .navbar {
   position: fixed;
-  top: 0;
+  top: 135px;   /* move navbar up/down using this */
+
   width: calc(100% - 40px);
-  margin: 20px;
+  margin: 0 20px;
+
   padding: 0px 32px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 25px;
-
-  background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.22),
-      rgba(255, 255, 255, 0.06));
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
 
   border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-
-  box-shadow:
-    0 12px 35px rgba(0, 0, 0, 0.18),
-    inset 0 0 1px rgba(255, 255, 255, 0.8);
-
   z-index: 1000;
 }
 
@@ -156,12 +146,38 @@ body::before {
 
 .emg {
   position: absolute;
+  right: 30px;          /* move to right side */
+  top: 3px;
   z-index: 3;
-  text-align: center;
-  padding-left: 355px;
+  text-align: right;
   color: #ff0000;
   font-family: sans-serif;
-  font-size: larger;
+  font-size: 16px;
+}
+
+/* language buttons */
+.lang-btn {
+  margin-left: 8px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-decoration: none;
+  border: 1px solid #cc0000;
+  color: #cc0000;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+/* hover effect */
+.lang-btn:hover {
+  background-color: #cc0000;
+  color: white;
+}
+
+/* active language */
+.lang-btn.active {
+  background-color: #cc0000;
+  color: white;
+  font-weight: 600;
 }
 
 
@@ -418,12 +434,7 @@ body::before {
 
 /* ===================== NAV SEARCH ===================== */
 /* ===================== NAV LINKS ===================== */
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 18px;
-  /* ⬅ spacing BETWEEN items, not padding */
-}
+
 
 .nav-links li {
   cursor: pointer;
@@ -484,18 +495,6 @@ body::before {
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
 }
 
-/* ================= NAVBAR VISIBILITY STATES ================= */
-
-/* Default → faded */
-.nav-idle {
-  opacity: 0.2;
-  transform: translateY(-8px) scale(0.98);
-}
-
-.nav-visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
 
 
 

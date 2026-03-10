@@ -18,7 +18,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 25px;
+  margin-top: 32px;
   border-radius: 18px;
   z-index: 1000;
 }
@@ -40,7 +40,7 @@
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 20px;
   list-style: none;
 }
 

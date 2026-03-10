@@ -239,9 +239,11 @@ function Homepage() {
       )}
 
       <h6 className="emg">
-        TOLL FREE NUMBER : 0484-2401990 | Language :
-        <a href="/en" className="lang-link"> English </a> |
-        <a href="/ml" className="lang-link"> മലയാളം </a>
+        TOLL FREE NUMBER : 0484-2401990 |
+
+        <a href="/en" className="lang-btn active">English</a>
+
+        <a href="/ml" className="lang-btn">മലയാളം</a>
       </h6>
 
       {/* NAVBAR */}
@@ -260,7 +262,7 @@ function Homepage() {
             <div className="dropdown-menu glass">
               <span>Board</span>
               <span><Link to="/governing-body">Governing Body</Link></span>
-              <span>Who is Who?</span>
+              <span><Link to="/Whoiswho">administrative Hierarchy</Link></span>
 
               {/* Schemes with submenu */}
               <div className="submenu-wrapper">
@@ -272,7 +274,7 @@ function Homepage() {
                 </div>
               </div>
 
-              <span>Office Details</span>
+              <span><Link to="/Officelist">Office Details</Link></span>
             </div>
           </li>
 
@@ -308,7 +310,7 @@ function Homepage() {
                 <span className="submenu-title">Board Staff ▸</span>
                 <div className="submenu glass">
                   <span>CPF Rules</span>
-                   <span>Staff Rules</span>
+                  <span>Staff Rules</span>
                   <span>Forms</span>
                   <span>Pay Revision</span>
                   <span>D.A</span>
