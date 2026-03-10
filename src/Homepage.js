@@ -9,7 +9,7 @@ import PVS from "./images/PVS.png";
 import VSK from "./images/VSK.png";
 import KSL from "./images/KSL.png";
 import AR from "./images/AR.png";
-import BGintro from "./images/BGintro.mp4";
+// import BGintro from "./images/BGintro.mp4";
 import logo from "./images/lolo.png";
 
 
@@ -48,8 +48,8 @@ function Homepage() {
 
   const [hasScrolled, setHasScrolled] = useState(false);
 
-  const [showIntro, setShowIntro] = useState(true);
-  const [fadeOut, setFadeOut] = useState(false);
+  // const [showIntro, setShowIntro] = useState(true);
+  // const [fadeOut, setFadeOut] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [showOverlay, setShowOverlay] = useState(false);
 
