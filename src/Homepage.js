@@ -76,31 +76,31 @@ function Homepage() {
   const graphRef = useRef(null);
 
 
-  useEffect(() => {
-    document.body.classList.add("intro-active");
+  // useEffect(() => {
+  //   document.body.classList.add("intro-active");
 
-    // Start fading video
-    const fadeTimer = setTimeout(() => {
-      setFadeOut(true);
-    }, 3500);
+  //   // Start fading video
+  //   const fadeTimer = setTimeout(() => {
+  //     setFadeOut(true);
+  //   }, 3500);
 
-    // Show PNG when fade starts
-    const overlayTimer = setTimeout(() => {
-      setShowOverlay(true);
-    }, 3500);
+  //   // Show PNG when fade starts
+  //   const overlayTimer = setTimeout(() => {
+  //     setShowOverlay(true);
+  //   }, 3500);
 
-    // Remove video completely
-    const removeTimer = setTimeout(() => {
-      setShowIntro(false);
-      document.body.classList.remove("intro-active");
-    }, 4500);
+  //   // Remove video completely
+  //   const removeTimer = setTimeout(() => {
+  //     setShowIntro(false);
+  //     document.body.classList.remove("intro-active");
+  //   }, 4500);
 
-    return () => {
-      clearTimeout(fadeTimer);
-      clearTimeout(overlayTimer);
-      clearTimeout(removeTimer);
-    };
-  }, []);
+  //   return () => {
+  //     clearTimeout(fadeTimer);
+  //     clearTimeout(overlayTimer);
+  //     clearTimeout(removeTimer);
+  //   };
+  // }, []);
 
 
 
@@ -227,7 +227,7 @@ function Homepage() {
 
 
 
-      {showIntro && (
+      {/* {showIntro && (
         <div className={`video-intro ${fadeOut ? "hide" : ""}`}>
           <video
             src={BGintro}
@@ -236,7 +236,7 @@ function Homepage() {
             playsInline
           />
         </div>
-      )}
+      )} */}
 
       <h6 className="emg">
         TOLL FREE NUMBER : 0484-2401990 |
