@@ -37,7 +37,7 @@ function Navbar() {
                 </div>
               </div>
 
-              <span>Office Details</span>
+              <span><Link to="/Officelist">Office Details</Link></span>
             </div>
           </li>
 
