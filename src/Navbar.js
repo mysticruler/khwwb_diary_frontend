@@ -8,7 +8,7 @@ function Navbar() {
 
   return (
     <>
-      
+
 
       <nav className="navbar glass">
         <div className="logo">
@@ -25,7 +25,7 @@ function Navbar() {
             <div className="dropdown-menu glass">
               <span>Board</span>
               <span><Link to="/governing-body">Governing Body</Link></span>
-              <span>administrative Hierarchy</span>
+              <span><Link to="/Whoiswho">Administrative Hierarchy</Link></span>
 
               {/* Schemes with submenu */}
               <div className="submenu-wrapper">
@@ -73,7 +73,7 @@ function Navbar() {
                 <span className="submenu-title">Board Staff ▸</span>
                 <div className="submenu glass">
                   <span>CPF Rules</span>
-                   <span>Staff Rules</span>
+                  <span>Staff Rules</span>
                   <span>Forms</span>
                   <span>Pay Revision</span>
                   <span>D.A</span>
@@ -103,7 +103,7 @@ function Navbar() {
           <li className="nav-item dropdown">
             Online Services
             <div className="dropdown-menu glass">
-              <span>Complaint Management System</span>
+              <span>Grievance Redressal</span>
               <span>Worker Request</span>
               <span>Online Welfare Application</span>
               <span>Online Payment</span>

@@ -239,7 +239,7 @@ function Homepage() {
       )} */}
 
       <h6 className="emg">
-        TOLL FREE NUMBER : 0484-2401990 |
+        TOLL FREE NUMBER : 1800 4253 545 |
 
         <a href="/en" className="lang-btn active">English</a>
 
@@ -262,7 +262,7 @@ function Homepage() {
             <div className="dropdown-menu glass">
               <span>Board</span>
               <span><Link to="/governing-body">Governing Body</Link></span>
-              <span><Link to="/Whoiswho">administrative Hierarchy</Link></span>
+              <span><Link to="/Whoiswho">Administrative Hierarchy</Link></span>
 
               {/* Schemes with submenu */}
               <div className="submenu-wrapper">
@@ -340,7 +340,7 @@ function Homepage() {
           <li className="nav-item dropdown">
             Online Services
             <div className="dropdown-menu glass">
-              <span>Complaint Management System</span>
+              <span>Grievance Redressal</span>
               <span>Worker Request</span>
               <span>Online Welfare Application</span>
               <span>Online Payment</span>

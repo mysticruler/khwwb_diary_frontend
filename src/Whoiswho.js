@@ -1,295 +1,520 @@
 import "./Whoiswho.css";
 import Navbar from "./Navbar";
-import { useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
 function Whoiswho() {
 
-const [activeFruit,setActiveFruit] = useState(null);
-
-const fruitDistricts = [
-
-{
-name:"Thiruvananthapuram",
-chairman:"SANAL A SALAM",
-secretary:"REKHA T K",
-ao:"JAYALEKSHMI K R"
-},
-
-{
-name:"Kollam",
-chairman:"DEEPA P",
-secretary:"REKHA I",
-ao:"SINDHU S S"
-},
-
-{
-name:"Pathanamthitta",
-chairman:"SURAJ S",
-secretary:"SURESH G",
-ao:"SRIJA S"
-},
-
-{
-name:"Alappuzha",
-chairman:"PADMAGIRISH G",
-secretary:"SASI R",
-ao:"SIMI JOHNSON K"
-},
-
-{
-name:"Kottayam",
-chairman:"SUJITHLAL K S",
-secretary:"SALINI RADHA S NAIR",
-ao:"GEETHA B"
-},
-
-{
-name:"Idukki",
-chairman:"SREEDEVI S",
-secretary:"BAIJU BABU",
-ao:"ELISHA T R"
-},
+    const fruitDistricts = [
+
+        {
+            name: "Thiruvananthapuram",
+            chairman: "SANAL A SALAM",
+            chairmanPhone: "9447270813",
+            secretary: "REKHA T K",
+            secretaryPhone: "9847623269",
+            ao: "JAYALAKSHMI K R",
+            aoPhone: "9895560135"
+        },
+
+        {
+            name: "Kollam",
+            chairman: "DEEPA P",
+            chairmanPhone: "9400522157",
+            secretary: "BAIJU BABU",
+            secretaryPhone: "9496039628",
+            ao: "SINDHU S S",
+            aoPhone: "9846730260"
+        },
+
+        {
+            name: "Pathanamthitta",
+            chairman: "SURAJ S",
+            chairmanPhone: "9497106367",
+            secretary: "SURESH G",
+            secretaryPhone: "9495360638",
+            ao: "SRIJA S",
+            aoPhone: "9961598989"
+        },
+
+        {
+            name: "Alappuzha",
+            chairman: "PADMAGIRISH G",
+            chairmanPhone: "8075353081",
+            secretary: "SASI R",
+            secretaryPhone: "8590292405",
+            ao: "SIMI JOHNSON K",
+            aoPhone: "9526869306"
+        },
+
+        {
+
+            name: "Kottayam",
+            chairman: "SUJITHLAL K S",
+            chairmanPhone: "9895473444",
+            secretary: "SALINI RADHA S NAIR",
+            secretaryPhone: "9400621783",
+            ao: "GEETHA B",
+            aoPhone: "7012187027"
+
+        },
+
+        {
+            name: "Idukki",
+            chairman: "SREEDEVI S",
+            chairmanPhone: "7907319895",
+            secretary: "PRAVEEN P SREEDHAR",
+            secretaryPhone: "8156873432",
+            ao: "ELISHA T R",
+            aoPhone: "7560948648"
+        },
+
+        {
+            name: "Ernakulam",
+            chairman: "BIJUMON P N",
+            chairmanPhone: "9400334334",
+            secretary: "VANAJA V R (IN CHARGE)",
+            secretaryPhone: "9495227699",
+            ao: "VANAJA V R (A O/HG)",
+            aoPhone: "9495227699"
+        },
+
+        {
+            name: "Thrissur",
+            chairman: "RESHMI V V",
+            chairmanPhone: "8547655268",
+            secretary: "SEENATH T K",
+            secretaryPhone: "9747717003",
+            ao: "C N SALEESH KUMAR",
+            aoPhone: "8921480364"
+        },
+
+
+
+        {
+            name: "Malappuram",
+            chairman: "JAYAPRAKASH NARAYANAN K",
+            chairmanPhone: "8547655273",
+            secretary: "RAGHAVAN",
+            secretaryPhone: "8547655294",
+            ao: "RAJESH S",
+            aoPhone: "9539311490"
+        },
+
+        {
+            name: "Kozhikode",
+            chairman: "SINI M",
+            chairmanPhone: "8547596850",
+            secretary: "ANILKUMAR P D",
+            secretaryPhone: "8547607673",
+            ao: "J JAYAPRAKASH",
+            aoPhone: "9446014523"
+        },
 
-{
-name:"Ernakulam",
-chairman:"BIJUMON P N",
-secretary:"VANAJA V R",
-ao:"VANAJA V R"
-},
+        {
+            name: "Wayanad",
+            chairman: "SHYJEESH N V",
+            chairmanPhone: "9746362935",
+            secretary: "BASHEER S P",
+            secretaryPhone: "9446778439",
+            ao: "DILEEP CHANDRAN C",
+            aoPhone: "9446444522"
+        },
 
-{
-name:"Thrissur",
-chairman:"JOVIN",
-secretary:"SEENATH T K",
-ao:"SALISH KUMAR"
-},
+        {
+            name: "Kannur",
+            chairman: "JAYESH G",
+            chairmanPhone: "9745008880",
+            secretary: "SAJITH CHIRAYIL",
+            secretaryPhone: "9495880669",
+            ao: "LILLY PUTHUSSERY KOROTH",
+            aoPhone: "9633919999"
+        },
 
-{
-name:"Palakkad",
-chairman:"ANIL SAM P S",
-secretary:"PRABHAT M P",
-ao:"SUNITHA O G"
-},
+        {
+            name: "Kasaragod",
+            chairman: "SABISHA V",
+            chairmanPhone: "9544266529",
+            secretary: "MANOJ K",
+            secretaryPhone: "9947744345",
+            ao: "LILLY PUTHUSSERY KOROTH",
+            aoPhone: "9633919999"
+        },
 
-{
-name:"Malappuram",
-chairman:"JAYAPRAKASH NARAYANAN K",
-secretary:"RAGHAVAN",
-ao:"RAJESH S"
-},
+        {
+            name: "Cochin Port Trust (CPT)",
+            chairman: "MAHESH T PAI",
+            chairmanPhone: "9188959939",
+            secretary: "NEELIMA V K",
+            secretaryPhone: "9497809090",
+            ao: "NEELIMA V K",
+            aoPhone: "9497809090"
+        }
 
-{
-name:"Kozhikode",
-chairman:"SINI M",
-secretary:"ANILKUMAR P D",
-ao:"J JAYAPRAKASH"
-},
+    ];
 
-{
-name:"Wayanad",
-chairman:"DILEEP CHANDRAN C",
-secretary:"ANISH V A",
-ao:"DILEEP CHANDRAN C"
-},
+    return (
 
-{
-name:"Kannur",
-chairman:"JAYESH G",
-secretary:"SAJITH CHIRAYIL",
-ao:"LILLY PUTHUSSERY KOROTH"
-},
+        <>
 
-{
-name:"Kasaragod",
-chairman:"SABISHA V",
-secretary:"MANOJ K",
-ao:"LILLY PUTHUSSERY KOROTH"
-}
+            <Navbar />
 
-];
+            <div className="apple-container">
 
-const toggleFruit = (district)=>{
-setActiveFruit(activeFruit===district ? null : district);
-};
+                <h1 className="mango-title">Administrative Hierarchy</h1>
 
-return(
-<>
 
-<Navbar/>
+                {/* CEO */}
 
-<div className="apple-container">
+                <div className="banana-card">
 
-<h1 className="mango-title">Administrative Hierarchy</h1>
+                    <h2>Chief Executive Officer</h2>
 
+                    <p className="orange-name">K. Sreelal, Additional Labour Commissioner</p>
 
-{/* CEO */}
+                    <p className="grape-desc">
 
-<div className="banana-card">
+                        The Chief Executive Officer is the principal administrative head of the Kerala Headload Workers Welfare Board. The Government may appoint an officer of the Labour Department not below the rank of Joint Labour Commissioner.
+                    </p>
 
-<h2>Chief Executive Officer</h2>
+                </div>
 
-<p className="orange-name">K. Sreelal, Additional Labour Commissioner</p>
 
-<p className="grape-desc">
+                <div className="pine-line"></div>
 
-The Chief Executive Officer is the principal administrative head of the Kerala Headload Workers Welfare Board. The Government may appoint an officer of the Labour Department not below the rank of Joint Labour Commissioner.
 
-</p>
+                {/* FO AND SECRETARY */}
 
-</div>
+                <div className="melon-row">
 
+                    <div className="kiwi-card">
 
-<div className="pine-line"></div>
+                        <h3>Finance Officer</h3>
 
+                        <div className="officer-cell">
 
-{/* FO AND SECRETARY */}
+                            <p className="orange-name">
+                                T N MUHAMMAD SHAFEEK <br />
+                                JOINT SECRETARY, FINANCE
+                            </p>
 
-<div className="melon-row">
+                            <div className="phone-row">
 
-<div className="kiwi-card">
+                                <span className="phone">9876543210</span>
 
-<h3>Finance Officer</h3>
+                                <a
+                                    href="https://wa.me/919876543210"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="whatsapp"
+                                >
+                                    <FaWhatsapp />
+                                </a>
 
-<p className="orange-name">T N MUHAMMAD SHAFEEK<br /> JOINT SECRETARY,FINANCE</p>
+                            </div>
 
-<p className="grape-desc">
+                        </div>
 
-The Finance Officer, appointed by Government not below the rank of Deputy Secretary in the Finance Department, manages all financial and accounting matters of the Board under the supervision of the Chief Executive Officer and prepares budgets and ensures proper financial control and accountability and transparency.</p>
+                        <p className="grape-desc">
 
-</div>
+                            The Finance Officer, appointed by Government not below the rank of Deputy Secretary in the Finance Department, manages all financial and accounting matters of the Board under the supervision of the Chief Executive Officer and prepares budgets and ensures proper financial control and accountability and transparency.
+                        </p>
 
-<div className="kiwi-card">
+                    </div>
 
-<h3>Secretary</h3>
+                    <div className="kiwi-card">
 
-<p className="orange-name">Vinod Kumar P.G<br /> Deputy Labour Commissioner</p>
+                        <h3>Secretary</h3>
 
-<p className="grape-desc">
+                        <div className="officer-cell">
 
-The Secretary, appointed by Government not below the rank of Deputy Labour Commissioner in the Labour Department, supervises implementation of schemes under the Act, assists the Chief Executive Officer in administration of the Board and District Committees, and exercises delegated administrative and financial powers.
+                            <p className="orange-name">VINOD KUMAR P G</p>
 
-</p>
+                            <p className="designation">DEPUTY LABOUR COMMISSIONER</p>
 
-</div>
+                            <div className="phone-row">
 
-</div>
+                                <span className="phone">9747253999</span>
 
+                                <a
+                                    href="https://wa.me/919747253999"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="whatsapp"
+                                >
+                                    <FaWhatsapp />
+                                </a>
 
-{/* AO SECTION */}
+                            </div>
 
-<div className="papaya-section">
+                        </div>
 
-<h2 className="peach-heading">Accounts Officers</h2>
+                        <p className="grape-desc">
 
-<p className="grape-desc plum-text">
+                            The Secretary, appointed by Government not below the rank of Deputy Labour Commissioner in the Labour Department, supervises implementation of schemes under the Act, assists the Chief Executive Officer in administration of the Board and District Committees, and exercises delegated administrative and financial powers.
+                        </p>
 
-The Board has five Accounts Officers handling the Establishment, Finance, Schemes, Audit, and Scattered Workers sections. They correspond with the Board and other offices on routine finance, accounts, and audit matters, prepare and process related records, and sign fair copies of communications approved by the Chief Executive Officer.
-</p>
+                    </div>
 
-<div className="berry-row">
+                </div>
 
-<div className="coconut-tile">
-AO Establishment
-<p>SHANUJA SS</p>
-</div>
 
-<div className="coconut-tile">
-AO Finance
-<p>JANCY PT</p>
-</div>
+                {/* AO SECTION */}
 
-<div className="coconut-tile">
-AO SCATTRED
-<p>BINDU KA</p>
-</div>
+                <div className="papaya-section">
 
-<div className="coconut-tile">
-AO Schemes
-<p>SAIYED SINNY SA VAHEED</p>
-</div>
+                    <h2 className="peach-heading">Accounts Officers</h2>
 
-<div className="coconut-tile">
-AO Audit
-<p>MALINI J.V</p>
-</div>
+                    <p className="grape-desc plum-text">
+                        Accounts Officers from the Board service act as supervisory officers of various sections at the Head Office. Accounts Officers manage the Establishment, Finance, Schemes, Audit, Scattered, Pension, Welfare, ECC and Accounts sections.
+                    </p>
 
-</div>
+                    <div className="berry-row">
 
-</div>
+                        <div className="coconut-tile">
 
+                            <p>AO Establishment</p>
 
+                            <p className="orange-name">SHANUJA SS</p>
 
-{/* DISTRICT SECTION */}
+                            <div className="phone-row">
 
-<div className="dragonfruit-section">
+                                <span className="phone">8848882521</span>
 
-<h2 className="peach-heading">District Offices</h2>
+                                <a
+                                    href="https://wa.me/918848882521"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="whatsapp"
+                                >
+                                    <FaWhatsapp />
+                                </a>
 
-<p className="dragon-intro">
+                            </div>
 
-The District Committee consists of a Chairman, Secretary, and Accounts Officer. The Chairman exercises overall supervision and control over the officers and staff of the District Committee. The Secretary assists the Chairman in managing the general administration and coordinating day-to-day office functions. The Accounts Officer handles financial, accounts, and audit matters, corresponds with the Board office on routine financial issues, and signs fair copies of communications approved by the Chairman.
+                        </div>
 
-</p>
 
+                        <div className="coconut-tile">
 
-<div className="lychee-container">
+                            <p>AO Finance</p>
 
-{fruitDistricts.map((district)=>(
+                            <p className="orange-name">JANCY PT</p>
 
-<div key={district.name} className="guava-row">
+                            <div className="phone-row">
 
-<div
-className="jackfruit-header"
-onClick={()=>toggleFruit(district.name)}
->
+                                <span className="phone">9495932199</span>
 
-{district.name}
+                                <a
+                                    href="https://wa.me/919495932199"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="whatsapp"
+                                >
+                                    <FaWhatsapp />
+                                </a>
 
-</div>
+                            </div>
 
+                        </div>
 
-{activeFruit===district.name &&(
 
-<div className="durian-expand">
+                        <div className="coconut-tile">
 
-<div className="avocado-card">
+                            <p>AO Scattered</p>
 
-<b>District Chairman</b>
-<p>{district.chairman}</p>
+                            <p className="orange-name">BINDU KA</p>
 
-</div>
+                            <div className="phone-row">
 
-<div className="avocado-card">
+                                <span className="phone">9544806556</span>
 
-<b>District Secretary</b>
-<p>{district.secretary}</p>
+                                <a
+                                    href="https://wa.me/919544806556"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="whatsapp"
+                                >
+                                    <FaWhatsapp />
+                                </a>
 
-</div>
+                            </div>
 
-<div className="avocado-card">
+                        </div>
 
-<b>District Accounts Officer</b>
-<p>{district.ao}</p>
 
-</div>
+                        <div className="coconut-tile">
 
-</div>
+                            <p>AO Schemes</p>
 
-)}
+                            <p className="orange-name">SAIYED SINNY SA VAHEED</p>
 
-</div>
+                            <div className="phone-row">
 
-))}
+                                <span className="phone">9048085233</span>
 
-</div>
+                                <a
+                                    href="https://wa.me/919048085233"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="whatsapp"
+                                >
+                                    <FaWhatsapp />
+                                </a>
 
-</div>
+                            </div>
 
-</div>
+                        </div>
 
-</>
 
-);
+                        <div className="coconut-tile">
+
+                            <p>AO Audit</p>
+
+                            <p className="orange-name">MALINI J V</p>
+
+                            <div className="phone-row">
+
+                                <span className="phone">9846472047</span>
+
+                                <a
+                                    href="https://wa.me/919846472047"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="whatsapp"
+                                >
+                                    <FaWhatsapp />
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                {/* DISTRICT SECTION */}
+
+                <div className="dragonfruit-section">
+
+                    <h2 className="peach-heading">District Offices</h2>
+
+                    <p className="dragon-intro">
+                        The Administrative Head of the District Office is the Chairman. Usually, the District Labour Officer of the Labour Department, notified by the Government, functions as the Chairman of the District Committee. A Deputy Labour Officer, notified by the Government from time to time, acts as the Secretary of the District Office. Accounts Officers from the Board service manage the District and Sub Offices under the supervision of the Chairman and Secretary.                    </p>
+
+                    <div className="district-table-wrapper">
+
+                        <table className="district-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>District</th>
+                                    <th>Chairman</th>
+                                    <th>Secretary</th>
+                                    <th>Accounts Officer</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                {fruitDistricts.map((d, index) => (
+
+                                    <tr key={index}>
+
+                                        <td className="district-name">{d.name}</td>
+
+                                        <td>
+
+                                            <div className="officer-cell">
+
+                                                <p className="officer-name">{d.chairman}</p>
+
+                                                <p className="phone">{d.chairmanPhone}</p>
+
+                                                <a
+                                                    href={`https://wa.me/91${d.chairmanPhone}`}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="whatsapp"
+                                                >
+
+                                                    <FaWhatsapp />
+
+                                                </a>
+
+                                            </div>
+
+                                        </td>
+
+                                        <td>
+
+                                            <div className="officer-cell">
+
+                                                <p className="officer-name">{d.secretary}</p>
+
+                                                <p className="phone">{d.secretaryPhone}</p>
+
+                                                <a
+                                                    href={`https://wa.me/91${d.secretaryPhone}`}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="whatsapp"
+                                                >
+
+                                                    <FaWhatsapp />
+
+                                                </a>
+
+                                            </div>
+
+                                        </td>
+
+                                        <td>
+
+                                            <div className="officer-cell">
+
+                                                <p className="officer-name">{d.ao}</p>
+
+                                                <p className="phone">{d.aoPhone}</p>
+
+                                                <a
+                                                    href={`https://wa.me/91${d.aoPhone}`}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="whatsapp"
+                                                >
+
+                                                    <FaWhatsapp />
+
+                                                </a>
+
+                                            </div>
+
+                                        </td>
+
+                                    </tr>
+
+                                ))}
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </>
+
+    );
 
 }
 
