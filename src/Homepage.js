@@ -267,10 +267,21 @@ function Homepage() {
               {/* Schemes with submenu */}
               <div className="submenu-wrapper">
                 <span className="submenu-title">Schemes ▸</span>
+
                 <div className="submenu glass">
-                  <span>Unattached Scheme</span>
-                  <span>Scattered Scheme</span>
-                  <span>Attached Scheme</span>
+
+                  <span>
+                    <Link to="/schemes/unattached">Unattached Scheme</Link>
+                  </span>
+
+                  <span>
+                    <Link to="/schemes/scattered">Scattered Scheme</Link>
+                  </span>
+
+                  <span>
+                    <Link to="/schemes/attached">Attached Scheme</Link>
+                  </span>
+
                 </div>
               </div>
 

@@ -5,7 +5,8 @@ import Homepage from './Homepage';
 import GoverningBody from "./governingBody";
 import Whoiswho from "./Whoiswho";
 import Officelist from "./Officelist";
-
+import Schemes from "./schemes";
+import Testing from "./testing";
 
 
 
@@ -18,7 +19,20 @@ function App() {
         <Route path="/governing-body" element={<GoverningBody />} />
         <Route path="/whoiswho" element={<Whoiswho />} />
         <Route path="/officelist" element={<Officelist />} />
-        
+        <Route path="/schemes/:type" element={<Schemes />} />
+
+
+
+
+
+
+
+
+
+
+
+
+        <Route path="/testing" element={<Testing />} /> 
       </Routes>
     </BrowserRouter>
   );
