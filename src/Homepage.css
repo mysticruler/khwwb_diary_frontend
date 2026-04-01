@@ -106,3 +106,50 @@ body {
 .submit-btn:hover {
   background: #0072ff;
 }
+
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .form-row {
+    flex-direction: column;   /* STACK FIELDS */
+    gap: 10px;
+  }
+
+  .field {
+    width: 100%;
+  }
+
+  .field label {
+    text-align: left;   /* better readability */
+    font-size: 12px;
+  }
+
+  .field input,
+  .field select {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .counter button {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .counter span {
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+}
