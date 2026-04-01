@@ -73,7 +73,7 @@ function Homepage() {
 
         <div className="header">
           <h1 className="title">
-            KERALA HEADLOAD WORKERS WELFARE BOARD <br />VISITORS DIARY
+            KERALA HEADLOAD WORKERS WELFARE BOARD VISITORS DIARY
           </h1>
         </div>
 
