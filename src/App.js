@@ -23,9 +23,6 @@ function App() {
 
 
 
-
-
-        <Route path="/testing" element={<Testing />} /> 
       </Routes>
     </BrowserRouter>
   );
