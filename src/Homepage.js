@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Homepage.css";
 
 function Homepage() {
@@ -11,6 +11,7 @@ function Homepage() {
   const [remarks, setRemarks] = useState("");
   const [visitors, setVisitors] = useState(1);
   const [purposeOptions, setPurposeOptions] = useState([]);
+  const [todayVisitors, setTodayVisitors] = useState([]);
 
   const purposeMap = {
     "P.S.C": ["P.S.C Rank List", "Vacancy", "Other"],
@@ -20,6 +21,29 @@ function Homepage() {
     "PUBLIC": ["Complaint", "Enquiry", "Other"],
   };
 
+  useEffect(() => {
+    fetchTodayVisitors();
+  }, []);
+
+  /* AUTO FETCH NAME & ADDRESS */
+  const handlePhoneChange = async (value) => {
+    setPhone(value);
+
+    if (value.length < 5) return;
+
+    try {
+      const res = await fetch(`https://khwwb-diary-backend.onrender.com/get-by-phone/${value}`);
+      const data = await res.json();
+
+      if (data) {
+        setName(data.name || "");
+        setAddress(data.address || "");
+      }
+    } catch (err) {
+      console.log("No previous data");
+    }
+  };
+
   const handleCategoryChange = (e) => {
     const selected = e.target.value;
     setCategory(selected);
@@ -27,7 +51,23 @@ function Homepage() {
     setPurpose("");
   };
 
+  const fetchTodayVisitors = async () => {
+    try {
+      const res = await fetch("https://khwwb-diary-backend.onrender.com/today-visitors");
+      const data = await res.json();
+      setTodayVisitors(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const handleSubmit = async () => {
+
+    if (!phone || !name) {
+      alert("Phone and Name are required ❗");
+      return;
+    }
+
     const data = {
       phone,
       name,
@@ -52,7 +92,6 @@ function Homepage() {
 
       alert("Saved Successfully ✅");
 
-      // CLEAR FORM
       setPhone("");
       setName("");
       setAddress("");
@@ -61,6 +100,8 @@ function Homepage() {
       setPurpose("");
       setRemarks("");
       setVisitors(1);
+
+      fetchTodayVisitors();
 
     } catch (err) {
       alert("Error saving ❌");
@@ -73,7 +114,7 @@ function Homepage() {
 
         <div className="header">
           <h1 className="title">
-            KERALA HEADLOAD WORKERS WELFARE BOARD VISITORS DIARY
+            KHWWB VISITORS DIARY
           </h1>
         </div>
 
@@ -81,12 +122,15 @@ function Homepage() {
           <div className="form-row">
 
             <div className="field">
-              <label>PHONE</label>
-              <input value={phone} onChange={(e) => setPhone(e.target.value)} />
+              <label>PHONE *</label>
+              <input
+                value={phone}
+                onChange={(e) => handlePhoneChange(e.target.value)}
+              />
             </div>
 
             <div className="field">
-              <label>NAME</label>
+              <label>NAME *</label>
               <input value={name} onChange={(e) => setName(e.target.value)} />
             </div>
 
@@ -113,9 +157,6 @@ function Homepage() {
                 <option>EMPLOYER</option>
                 <option>BANK</option>
                 <option>WORKER</option>
-                <option>PENSIONER</option>
-                <option>RETIRED STAFF</option>
-                <option>OTHER</option>
               </select>
             </div>
 
@@ -123,15 +164,9 @@ function Homepage() {
               <label>SECTION</label>
               <select value={section} onChange={(e) => setSection(e.target.value)}>
                 <option value=""></option>
-                <option>C.E.O</option>
-                <option>FINANCE OFFICER</option>
-                <option>SECRETARY</option>
-                <option>ESTABLISHMENT</option>
+                <option>FINANCE</option>
                 <option>PENSION</option>
                 <option>WELFARE</option>
-                <option>ECC</option>
-                <option>FINANCE</option>
-                <option>SCATTERED</option>
               </select>
             </div>
 
@@ -158,6 +193,31 @@ function Homepage() {
             </div>
 
           </div>
+        </div>
+
+        {/* TODAY VISITORS */}
+        <div className="today-section">
+          <h2>Today's Visitors</h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {todayVisitors.map((v, i) => (
+                <tr key={i}>
+                  <td>{v.name}</td>
+                  <td>{v.address}</td>
+                  <td>{v.purpose}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
       </div>

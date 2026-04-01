@@ -153,3 +153,26 @@ body {
     padding: 0 10px;
   }
 }
+
+
+.today-section {
+  margin-top: 30px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.today-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.today-section th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.today-section th {
+  background: #2a5298;
+  color: white;
+}
