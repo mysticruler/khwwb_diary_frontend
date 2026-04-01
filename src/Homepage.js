@@ -13,12 +13,23 @@ function Homepage() {
   const [purposeOptions, setPurposeOptions] = useState([]);
   const [todayVisitors, setTodayVisitors] = useState([]);
 
+  /* ✅ UPDATED PURPOSE MAP */
   const purposeMap = {
-    "P.S.C": ["P.S.C Rank List", "Vacancy", "Other"],
-    "BANK": ["FD Related", "Other"],
-    "EMPLOYER": ["Enquiry", "Dispute", "Other"],
-    "WORKER": ["Application", "Follow Up", "Pension", "Complaint", "Other"],
-    "PUBLIC": ["Complaint", "Enquiry", "Other"],
+    "P.S.C": ["RANK LIST", "VACANCY", "OTHER"],
+
+    "EMPLOYER": ["ENQUIRY", "DISPUTE", "OTHER"],
+
+    "WORKER": ["APPLICATION", "FOLLOW UP", "COMPLAINT", "PENSION"],
+
+    "PUBLIC": ["COMPLAINT", "ENQUIRY", "OTHER"],
+
+    "BANK": ["F.D DETAILS", "OTHER"],
+
+    "OTHERS": ["COMPLAINTS", "OTHER"],
+
+    "PENSIONER": ["OTHER"],
+
+    "RETIRED-STAFFS": ["OTHER"]
   };
 
   useEffect(() => {
@@ -47,7 +58,9 @@ function Homepage() {
   const handleCategoryChange = (e) => {
     const selected = e.target.value;
     setCategory(selected);
-    setPurposeOptions(purposeMap[selected] || ["Other"]);
+
+    /* ✅ FIXED PURPOSE LOAD */
+    setPurposeOptions(purposeMap[selected] || ["OTHER"]);
     setPurpose("");
   };
 
