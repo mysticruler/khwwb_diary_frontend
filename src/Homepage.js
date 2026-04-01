@@ -157,6 +157,9 @@ function Homepage() {
                 <option>EMPLOYER</option>
                 <option>BANK</option>
                 <option>WORKER</option>
+                <option>PENSIONER</option>
+                <option>RETIRED-STAFFS</option>
+                <option>OTHERS</option>
               </select>
             </div>
 
@@ -164,9 +167,15 @@ function Homepage() {
               <label>SECTION</label>
               <select value={section} onChange={(e) => setSection(e.target.value)}>
                 <option value=""></option>
+                <option>C.E.O</option>
+                <option>FINANCE OFFICER</option>
+                <option>SECRETARY</option>
+                <option>ESTABLISHMENT</option>
                 <option>FINANCE</option>
                 <option>PENSION</option>
                 <option>WELFARE</option>
+                <option>E.C.C</option>
+                <option>SCATTERED</option>
               </select>
             </div>
 
