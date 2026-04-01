@@ -40,7 +40,7 @@ function Homepage() {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/add-visitor", {
+      const res = await fetch("https://khwwb-diary-backend.onrender.com/add-visitor", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
