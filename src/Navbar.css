@@ -1,0 +1,85 @@
+/* TOP RED TEXT */
+.emg {
+  position: absolute;
+  z-index: 3;
+  text-align: center;
+  padding-left: 355px;
+  color: red;
+  font-size: larger;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: calc(100% - 40px);
+  margin: 20px;
+  padding: 0px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+  border-radius: 18px;
+  z-index: 1000;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 21px;
+}
+
+.logo-img {
+  width: 52px;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #1f2933;
+  font-weight: 600;
+}
+
+/* DROPDOWN */
+.dropdown-menu {
+  position: absolute;
+  top: 115%;
+  left: 0;
+  min-width: 230px;
+  border-radius: 14px;
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: 0.25s;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* LOGIN */
+.login-btn {
+  padding: 9px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.login-popup {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 220px;
+}

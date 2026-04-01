@@ -1,0 +1,213 @@
+.apple-container {
+    padding-top: 120px;
+    width: 85%;
+    margin: auto;
+}
+
+
+/* TITLE */
+
+.mango-title {
+    font-size: 40px;
+    margin-bottom: 60px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* CEO CARD */
+
+.banana-card {
+    background: white;
+    padding: 30px;
+    width: 650px;
+    margin: auto;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.orange-name {
+    font-weight: 600;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.grape-desc {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+
+.plum-text {
+    max-width: 900px;
+    margin: auto;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+/* LINE */
+
+.pine-line {
+    width: 2px;
+    height: 50px;
+    background: #555;
+    margin: 35px auto;
+}
+
+.dragon-intro {
+    color: #444;
+    line-height: 1.8;
+    margin: auto auto 40px;
+    max-width: 1000px;
+    text-align: justify;}
+
+
+/* ROW */
+
+.melon-row {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 70px;
+    flex-wrap: wrap;
+}
+
+
+/* FO / SEC */
+
+.kiwi-card {
+    background: white;
+    padding: 25px;
+    width: 380px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.kiwi-card h3 {
+    text-align: center;
+}
+
+
+/* AO SECTION */
+
+.papaya-section {
+    margin-top: 40px;
+    margin-bottom: 90px;
+    text-align: center;
+}
+
+.peach-heading {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+
+/* AO ROW */
+
+.berry-row {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+
+/* AO TILE */
+
+.coconut-tile {
+    background: white;
+    width: 200px;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    font-weight: 600;
+    text-align: center;
+}
+
+.coconut-tile p {
+    font-weight: normal;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+
+
+/* DISTRICT TABLE */
+
+.district-table-wrapper {
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+.district-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.district-table th {
+    background: #2563eb;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+}
+
+.district-table td {
+    padding: 18px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.district-name {
+    font-weight: 600;
+}
+
+.officer-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.officer-name {
+    font-weight: 600;
+}
+
+.phone {
+    font-size: 14px;
+    color: #555;
+}
+
+.whatsapp {
+    color: #25D366;
+    font-size: 22px;
+    margin-top: 6px;
+}
+
+.whatsapp:hover {
+    transform: scale(1.2);
+}
+
+
+
+.phone-row{
+display:flex;
+align-items:center;
+gap:6px;
+justify-content:center;
+}
+
+.whatsapp{
+color:#25D366;
+font-size:18px;
+text-decoration:none;
+}
+
+.phone{
+font-weight:500;
+}
