@@ -9,6 +9,39 @@
   color: #1e3c72;
 }
 
+/* FORM */
+.form-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-box input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.add-btn,
+.update-btn {
+  grid-column: span 2;
+  padding: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.add-btn {
+  background: #28a745;
+}
+
+.update-btn {
+  background: #ff9800;
+}
+
+/* TABLE */
 .admin-table {
   width: 100%;
   border-collapse: collapse;
@@ -19,7 +52,7 @@
 .admin-table td {
   border: 1px solid #ddd;
   padding: 8px;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .admin-table th {
@@ -33,4 +66,24 @@
 
 .admin-table tr:hover {
   background-color: #ddd;
+}
+
+/* BUTTONS */
+.edit-btn {
+  background: #2196f3;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.delete-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  cursor: pointer;
+  border-radius: 4px;
 }

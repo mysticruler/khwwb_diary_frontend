@@ -1,16 +1,24 @@
+/* ========================= */
 /* GLOBAL */
+/* ========================= */
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
   background: linear-gradient(135deg, #1e3c72, #2a5298);
 }
 
+/* ========================= */
 /* CONTAINER */
+/* ========================= */
 .container {
   padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* ========================= */
 /* HEADER */
+/* ========================= */
 .header {
   text-align: center;
   margin-bottom: 10px;
@@ -22,39 +30,51 @@ body {
   font-weight: bold;
 }
 
+/* ========================= */
 /* FORM WRAPPER */
+/* ========================= */
 .form-wrapper {
-  display: flex;
-  justify-content: center;
+  width: 100%;
 }
 
-/* FORM ROW - NO SCROLL */
+/* ========================= */
+/* FORM ROW */
+/* ========================= */
 .form-row {
   display: flex;
-  gap: 6px;
+  flex-wrap: wrap;              /* ✅ KEY FIX */
+  gap: 10px;
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 8px;
   backdrop-filter: blur(8px);
+  box-sizing: border-box;
 }
 
-/* FIELD - AUTO FIT */
+/* ========================= */
+/* FIELD */
+/* ========================= */
 .field {
   display: flex;
   flex-direction: column;
-  flex: 1; /* THIS FIXES EVERYTHING */
+  flex: 1 1 150px;             /* ✅ responsive sizing */
+  min-width: 120px;
 }
 
+/* ========================= */
 /* LABEL */
+/* ========================= */
 .field label {
-  font-size: 10px;
+  font-size: 11px;
   color: white;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
   text-align: center;
 }
 
+/* ========================= */
 /* INPUT */
+/* ========================= */
 .field input,
 .field select {
   padding: 6px;
@@ -62,29 +82,36 @@ body {
   border: none;
   font-size: 12px;
   outline: none;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* ========================= */
 /* FOCUS */
+/* ========================= */
 .field input:focus,
 .field select:focus {
-  box-shadow: 0 0 4px #00c6ff;
+  box-shadow: 0 0 5px #00c6ff;
 }
 
+/* ========================= */
 /* COUNTER */
+/* ========================= */
 .counter {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 6px;
 }
 
 .counter button {
   border: none;
   background: #00c6ff;
   color: white;
-  padding: 2px 6px;
-  border-radius: 3px;
+  padding: 4px 8px;
+  border-radius: 4px;
   font-size: 12px;
+  cursor: pointer;
 }
 
 .counter span {
@@ -92,15 +119,25 @@ body {
   font-weight: bold;
 }
 
+/* ========================= */
 /* BUTTON */
+/* ========================= */
+.submit-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;   /* ✅ center horizontally */
+  margin-top: 10px;
+}
 .submit-btn {
-  padding: 6px;
+  padding: 8px 20px;
   border: none;
   background: #00c6ff;
   color: white;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 13px;
   cursor: pointer;
+  width: auto;              /* ❌ remove full width */
+  min-width: 120px;         /* optional nice size */
 }
 
 .submit-btn:hover {
@@ -108,22 +145,50 @@ body {
 }
 
 /* ========================= */
+/* TODAY SECTION */
+/* ========================= */
+.today-section {
+  margin-top: 30px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  overflow-x: auto;  /* ✅ prevents table overflow */
+}
+
+.today-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.today-section th,
+.today-section td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-size: 13px;
+}
+
+.today-section th {
+  background: #2a5298;
+  color: white;
+}
+
+/* ========================= */
 /* 📱 MOBILE RESPONSIVE */
 /* ========================= */
-
 @media (max-width: 768px) {
 
-  .form-row {
-    flex-direction: column;   /* STACK FIELDS */
-    gap: 10px;
+  .title {
+    font-size: 16px;
+    padding: 0 10px;
   }
 
   .field {
-    width: 100%;
+    flex: 1 1 100%;   /* ✅ full width fields */
   }
 
   .field label {
-    text-align: left;   /* better readability */
+    text-align: left;
     font-size: 12px;
   }
 
@@ -143,37 +208,7 @@ body {
   }
 
   .submit-btn {
-    width: 100%;
-    padding: 10px;
+    padding: 12px;
     font-size: 14px;
   }
-
-  .title {
-    font-size: 16px;
-    padding: 0 10px;
-  }
-}
-
-
-.today-section {
-  margin-top: 30px;
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.today-section table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.today-section th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-.today-section th {
-  background: #2a5298;
-  color: white;
 }

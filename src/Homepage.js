@@ -132,6 +132,8 @@ function Homepage() {
         </div>
 
         <div className="form-wrapper">
+
+          {/* FORM ROW */}
           <div className="form-row">
 
             <div className="field">
@@ -207,14 +209,15 @@ function Homepage() {
               <input value={remarks} onChange={(e) => setRemarks(e.target.value)} />
             </div>
 
-            <div className="field">
-              <label>&nbsp;</label>
-              <button className="submit-btn" onClick={handleSubmit}>
-                SUBMIT
-              </button>
-            </div>
-
           </div>
+
+          {/* ✅ SUBMIT BUTTON (SEPARATE ROW) */}
+          <div className="submit-wrapper">
+            <button className="submit-btn" onClick={handleSubmit}>
+              Submit
+            </button>
+          </div>
+
         </div>
 
         {/* TODAY VISITORS */}
