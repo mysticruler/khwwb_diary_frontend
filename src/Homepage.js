@@ -30,12 +30,49 @@ function Homepage() {
     fetchTodayVisitors();
   }, []);
 
+  /* ============================= */
+  /* 🔥 AUTO FETCH NAME (FIXED) */
+  /* ============================= */
+  useEffect(() => {
+    const delayDebounce = setTimeout(async () => {
+
+      // ✅ ONLY WHEN 10 DIGITS
+      if (phone.length !== 10) {
+        setName("");
+        setAddress("");
+        return;
+      }
+
+      try {
+        const res = await fetch(`${BASE_URL}/get-by-phone/${phone}`);
+
+        if (!res.ok) return;
+
+        const data = await res.json();
+
+        if (data) {
+          setName(data.name || "");
+          setAddress(data.address || "");
+        } else {
+          setName("");
+          setAddress("");
+        }
+
+      } catch {
+        console.log("No previous data");
+      }
+
+    }, 500); // ⏳ debounce delay
+
+    return () => clearTimeout(delayDebounce);
+
+  }, [phone]);
+
   /* FETCH TODAY VISITORS */
   const fetchTodayVisitors = async () => {
     try {
       const res = await fetch(`${BASE_URL}/today-visitors`);
 
-      // ✅ SAFE CHECK
       if (!res.ok) {
         console.error("API Error:", res.status);
         setTodayVisitors([]);
@@ -44,41 +81,15 @@ function Homepage() {
 
       const data = await res.json();
 
-      // ✅ SAFE DATA CHECK
       if (Array.isArray(data)) {
         setTodayVisitors(data);
       } else {
-        console.error("Invalid data:", data);
         setTodayVisitors([]);
       }
 
     } catch (err) {
       console.log("Fetch error:", err);
       setTodayVisitors([]);
-    }
-  };
-
-  /* AUTO FETCH NAME */
-  const handlePhoneChange = async (value) => {
-    setPhone(value);
-
-    if (value.length < 5) return;
-
-    try {
-      const res = await fetch(`${BASE_URL}/get-by-phone/${value}`);
-
-      // ✅ SAFE CHECK
-      if (!res.ok) return;
-
-      const data = await res.json();
-
-      if (data) {
-        setName(data.name || "");
-        setAddress(data.address || "");
-      }
-
-    } catch {
-      console.log("No previous data");
     }
   };
 
@@ -115,7 +126,6 @@ function Homepage() {
         body: JSON.stringify(data)
       });
 
-      // ✅ SAFE CHECK
       if (!res.ok) {
         alert("Error saving ❌");
         return;
@@ -123,7 +133,6 @@ function Homepage() {
 
       alert("Saved Successfully ✅");
 
-      /* RESET */
       setPhone("");
       setName("");
       setAddress("");
@@ -154,7 +163,7 @@ function Homepage() {
             <label>PHONE *</label>
             <input
               value={phone}
-              onChange={(e) => handlePhoneChange(e.target.value)}
+              onChange={(e) => setPhone(e.target.value)}
             />
           </div>
 
@@ -232,7 +241,6 @@ function Homepage() {
         </div>
       </div>
 
-      {/* TODAY VISITORS */}
       <div className="today-section">
         <h2>Today's Visitors</h2>
 
@@ -251,9 +259,8 @@ function Homepage() {
                 <td colSpan="3">No visitors today</td>
               </tr>
             ) : (
-              Array.isArray(todayVisitors) &&
               todayVisitors.map((v) => (
-                <tr key={v.id || Math.random()}>
+                <tr key={v.id}>
                   <td>{v.name}</td>
                   <td>{v.address}</td>
                   <td>{v.purpose}</td>
