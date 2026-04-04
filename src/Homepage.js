@@ -34,10 +34,27 @@ function Homepage() {
   const fetchTodayVisitors = async () => {
     try {
       const res = await fetch(`${BASE_URL}/today-visitors`);
+
+      // ✅ SAFE CHECK
+      if (!res.ok) {
+        console.error("API Error:", res.status);
+        setTodayVisitors([]);
+        return;
+      }
+
       const data = await res.json();
-      setTodayVisitors(data);
+
+      // ✅ SAFE DATA CHECK
+      if (Array.isArray(data)) {
+        setTodayVisitors(data);
+      } else {
+        console.error("Invalid data:", data);
+        setTodayVisitors([]);
+      }
+
     } catch (err) {
       console.log("Fetch error:", err);
+      setTodayVisitors([]);
     }
   };
 
@@ -49,12 +66,17 @@ function Homepage() {
 
     try {
       const res = await fetch(`${BASE_URL}/get-by-phone/${value}`);
+
+      // ✅ SAFE CHECK
+      if (!res.ok) return;
+
       const data = await res.json();
 
       if (data) {
         setName(data.name || "");
         setAddress(data.address || "");
       }
+
     } catch {
       console.log("No previous data");
     }
@@ -85,13 +107,19 @@ function Homepage() {
     };
 
     try {
-      await fetch(`${BASE_URL}/add-visitor`, {
+      const res = await fetch(`${BASE_URL}/add-visitor`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(data)
       });
+
+      // ✅ SAFE CHECK
+      if (!res.ok) {
+        alert("Error saving ❌");
+        return;
+      }
 
       alert("Saved Successfully ✅");
 
@@ -218,13 +246,14 @@ function Homepage() {
           </thead>
 
           <tbody>
-            {todayVisitors.length === 0 ? (
+            {Array.isArray(todayVisitors) && todayVisitors.length === 0 ? (
               <tr>
                 <td colSpan="3">No visitors today</td>
               </tr>
             ) : (
+              Array.isArray(todayVisitors) &&
               todayVisitors.map((v) => (
-                <tr key={v.id}>
+                <tr key={v.id || Math.random()}>
                   <td>{v.name}</td>
                   <td>{v.address}</td>
                   <td>{v.purpose}</td>
