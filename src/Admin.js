@@ -163,13 +163,15 @@ function Admin() {
         </select>
 
         <input placeholder="Remarks" value={form.remarks} onChange={(e) => setForm({ ...form, remarks: e.target.value })} />
-
+      </div>
+      <div className="button-row">
         {editId ? (
           <button className="update-btn" onClick={handleUpdate}>Update</button>
         ) : (
           <button className="add-btn" onClick={handleAdd}>Add</button>
         )}
       </div>
+
 
       {/* TABLE */}
       <table className="admin-table">
@@ -201,7 +203,7 @@ function Admin() {
               <td>{item.purpose}</td>
               <td>{item.remarks}</td>
 
-            
+
 
               <td>
                 <button className="edit-btn" onClick={() => handleEdit(item)}>Edit</button>

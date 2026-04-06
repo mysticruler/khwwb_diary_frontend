@@ -134,10 +134,10 @@ body {
   background: #00c6ff;
   color: white;
   border-radius: 4px;
-  font-size: 13px;
+  font-size: 15px;
   cursor: pointer;
   width: auto;              /* ❌ remove full width */
-  min-width: 120px;         /* optional nice size */
+  min-width: 150px;         /* optional nice size */
 }
 
 .submit-btn:hover {
