@@ -176,9 +176,14 @@ function Admin() {
         <thead>
           <tr>
             <th>Date</th>
-            <th>Name</th>
             <th>Phone</th>
+            <th>Name</th>
+            <th>Visitors</th>
+            <th>Address</th>
+            <th>Category</th>
+            <th>Section</th>
             <th>Purpose</th>
+            <th>Remarks</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -187,9 +192,16 @@ function Admin() {
           {data.map((item) => (
             <tr key={item.id}>
               <td>{formatDate(item.createdAt)}</td>
-              <td>{item.name}</td>
               <td>{item.phone}</td>
+              <td>{item.name}</td>
+              <td>{item.visitors}</td>
+              <td>{item.address}</td>
+              <td>{item.category}</td>
+              <td>{item.section}</td>
               <td>{item.purpose}</td>
+              <td>{item.remarks}</td>
+
+            
 
               <td>
                 <button className="edit-btn" onClick={() => handleEdit(item)}>Edit</button>
