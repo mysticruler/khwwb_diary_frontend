@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./Admin.css";
 
+import { useNavigate } from "react-router-dom";
+
 const API = "https://khwwb-diary-backend.onrender.com";
 // const API = "http://localhost:5000";
 
@@ -32,9 +34,9 @@ function Admin() {
     "RETIRED-STAFFS": ["OTHER"]
   };
 
-  useEffect(() => {
-    fetchVisitors();
-  }, []);
+  // useEffect(() => {
+  //   fetchVisitors();
+  // }, []);
 
   const fetchVisitors = async () => {
     const res = await fetch(`${API}/get-visitors`);
@@ -123,6 +125,20 @@ function Admin() {
 
     return new Date(createdAt).toLocaleString();
   };
+
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+  const isAuth = localStorage.getItem("adminAuth");
+
+  if (!isAuth) {
+    navigate("/milanistheadmin");
+    return;
+  }
+
+  fetchVisitors();
+}, [navigate]);
 
   return (
     <div className="admin-container">
