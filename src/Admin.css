@@ -149,3 +149,44 @@
     padding: 12px;
   }
 }
+
+
+/* FILTER BOX */
+.filter-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.filter-box select,
+.filter-box input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.download-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 9px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.download-btn:hover {
+  background: #218838;
+}
+
+/* DATE HEADER */
+.date-header {
+  background: #2a5298;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  margin-top: 20px;
+}
