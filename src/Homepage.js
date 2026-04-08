@@ -250,6 +250,7 @@ function Homepage() {
               <th>Name</th>
               <th>Address</th>
               <th>Purpose</th>
+              <th>Remarks</th>
             </tr>
           </thead>
 
@@ -264,6 +265,7 @@ function Homepage() {
                   <td>{v.name}</td>
                   <td>{v.address}</td>
                   <td>{v.purpose}</td>
+                  <td>{v.remarks}</td>
                 </tr>
               ))
             )}
