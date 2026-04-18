@@ -49,7 +49,7 @@ function Homepage() {
         if (data) {
           setName(data.name || "");
           setAddress(data.address || "");
-          
+
         }
 
       } catch {
@@ -167,7 +167,7 @@ function Homepage() {
               value={name}
               onChange={(e) => {
                 setName(e.target.value);
-                
+
               }}
             />
           </div>
@@ -187,7 +187,7 @@ function Homepage() {
               value={address}
               onChange={(e) => {
                 setAddress(e.target.value);
-              
+
               }}
             />
           </div>
@@ -255,6 +255,8 @@ function Homepage() {
             <tr>
               <th>Name</th>
               <th>Address</th>
+              <th>Category</th>
+              <th>Section</th>
               <th>Purpose</th>
               <th>Remarks</th>
             </tr>
