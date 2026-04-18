@@ -271,6 +271,8 @@ function Homepage() {
                 <tr key={v.id}>
                   <td>{v.name}</td>
                   <td>{v.address}</td>
+                  <td>{v.category}</td>
+                  <td>{v.section}</td>
                   <td>{v.purpose}</td>
                   <td>{v.remarks}</td>
                 </tr>
