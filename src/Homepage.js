@@ -187,7 +187,7 @@ function Homepage() {
               value={address}
               onChange={(e) => {
                 setAddress(e.target.value);
-                setIsAutoFilled(false);
+              
               }}
             />
           </div>
