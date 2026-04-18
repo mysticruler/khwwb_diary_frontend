@@ -12,6 +12,7 @@ function Homepage() {
   const [visitors, setVisitors] = useState(1);
   const [purposeOptions, setPurposeOptions] = useState([]);
   const [todayVisitors, setTodayVisitors] = useState([]);
+  const [isAutoFilled, setIsAutoFilled] = useState(false);
 
   const BASE_URL = "https://khwwb-diary-backend.onrender.com";
 
@@ -36,33 +37,27 @@ function Homepage() {
   useEffect(() => {
     const delayDebounce = setTimeout(async () => {
 
-      // ✅ ONLY WHEN 10 DIGITS
-      if (phone.length !== 10) {
-        setName("");
-        setAddress("");
-        return;
-      }
+      // ✅ Only run when phone is exactly 10 digits
+      if (phone.length !== 10) return;
 
       try {
         const res = await fetch(`${BASE_URL}/get-by-phone/${phone}`);
-
         if (!res.ok) return;
 
         const data = await res.json();
 
+        // ✅ Autofill only if data exists
         if (data) {
           setName(data.name || "");
           setAddress(data.address || "");
-        } else {
-          setName("");
-          setAddress("");
+          setIsAutoFilled(true);
         }
 
       } catch {
         console.log("No previous data");
       }
 
-    }, 500); // ⏳ debounce delay
+    }, 500); // debounce
 
     return () => clearTimeout(delayDebounce);
 
@@ -169,7 +164,13 @@ function Homepage() {
 
           <div className="field">
             <label>NAME *</label>
-            <input value={name} onChange={(e) => setName(e.target.value)} />
+            <input
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+                setIsAutoFilled(false);
+              }}
+            />
           </div>
 
           <div className="field">
@@ -183,7 +184,13 @@ function Homepage() {
 
           <div className="field">
             <label>ADDRESS</label>
-            <input value={address} onChange={(e) => setAddress(e.target.value)} />
+            <input
+              value={address}
+              onChange={(e) => {
+                setAddress(e.target.value);
+                setIsAutoFilled(false);
+              }}
+            />
           </div>
 
           <div className="field">
