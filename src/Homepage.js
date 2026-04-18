@@ -90,7 +90,8 @@ function Homepage() {
   const handleCategoryChange = (e) => {
     const selected = e.target.value;
     setCategory(selected);
-    setPurposeOptions(purposeMap[selected] || ["OTHER"]);
+    const options = purposeMap[selected] || [];
+    setPurposeOptions([...new Set([...options, "OTHER"])]);
     setPurpose("");
   };
 
