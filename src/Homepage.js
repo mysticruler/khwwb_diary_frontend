@@ -12,7 +12,6 @@ function Homepage() {
   const [visitors, setVisitors] = useState(1);
   const [purposeOptions, setPurposeOptions] = useState([]);
   const [todayVisitors, setTodayVisitors] = useState([]);
-  const [isAutoFilled, setIsAutoFilled] = useState(false);
 
   const BASE_URL = "https://khwwb-diary-backend.onrender.com";
 
@@ -50,7 +49,7 @@ function Homepage() {
         if (data) {
           setName(data.name || "");
           setAddress(data.address || "");
-          setIsAutoFilled(true);
+          
         }
 
       } catch {
@@ -168,7 +167,7 @@ function Homepage() {
               value={name}
               onChange={(e) => {
                 setName(e.target.value);
-                setIsAutoFilled(false);
+                
               }}
             />
           </div>
