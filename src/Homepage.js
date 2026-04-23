@@ -266,7 +266,7 @@ function Homepage() {
           <tbody>
             {Array.isArray(todayVisitors) && todayVisitors.length === 0 ? (
               <tr>
-                <td colSpan="3">No visitors today</td>
+                <td colSpan="6">No visitors today</td>
               </tr>
             ) : (
               todayVisitors.map((v) => (
